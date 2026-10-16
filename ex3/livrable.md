@@ -15,18 +15,3 @@ Schéma des flux d'information
 
 ![Schéma des flux d'information](schema_flux.png)
 
-Version interactive (Mermaid) :
-
-mermaid
-flowchart TD
-    PM["Premier ministre"] --- SGDSN["SGDSN"]
-    SGDSN -->|"rattachement, coordination"| ANSSI["ANSSI / CERT-FR"]
-    ENISA["ENISA"] <-->|"coopération UE"| ANSSI
-    ANSSI <--> HFDS["Ministère de tutelle / HFDS Transports"]
-    PN["PortNormand"] -->|"notifie un incident"| ANSSI
-    ANSSI -->|"alertes, assistance, contrôle"| PN
-    PN -->|"notifie une violation de données (~72 h)"| CNIL["CNIL"]
-    PN -->|"information sectorielle"| HFDS
-
-
-Lecture : les flux directs avec PortNormand sont ANSSI/CERT-FR, CNIL et HFDS. Le SGDSN et l'ENISA sont en arrière-plan, reliés à l'ANSSI.
